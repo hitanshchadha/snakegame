@@ -41,7 +41,7 @@ window.onload=function(){
   document.addEventListener("keyup",changeDirection);
   placeFood();
   
-  setInterval(update, 1000/(10));
+  setInterval(update, 1000/(15));
   setInterval(placebomb,1000);
   setInterval(placebomb2,2000);
   setInterval(placebomb3,4000);
@@ -90,6 +90,8 @@ function update() {
     sx += velx * blocks;
     sy += vely * blocks;
     context.fillRect(sx, sy, blocks, blocks);
+//   var image= document.getElementById("eagle");
+// context.drawImage(image, sx, sy, 25, 25);
      for (let i = 0; i < snakelen.length; i++) {
     context.fillRect(snakelen[i][0], snakelen[i][1], blocks, blocks);
 
@@ -113,19 +115,19 @@ function update() {
 
 
 function changeDirection(e) {
-    if (e.code == "ArrowUp" && vely!=1) {
+    if (e.code == "ArrowUp" || e.code=="KeyW" && vely!=1) {
         velx = 0;
         vely = -1;
     }
-    else if (e.code == "ArrowDown" && vely!=-1) {
+    else if (e.code == "ArrowDown" || e.code=="KeyS" && vely!=-1) {
         velx = 0;
         vely = 1;
     }
-    else if (e.code == "ArrowLeft" && velx!=1) {
+    else if (e.code == "ArrowLeft" || e.code=="KeyA"  && velx!=1) {
         velx = -1;
         vely = 0;
     }
-    else if (e.code == "ArrowRight" && velx!=-1) {
+    else if (e.code == "ArrowRight" || e.code=="KeyD" && velx!=-1) {
         velx = 1;
         vely= 0;
     }
