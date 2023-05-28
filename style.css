@@ -1,0 +1,43 @@
+body{
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(79,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
+.snaketitle{
+    font-size: 3rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    color: white;
+
+}
+#mainboard{
+    
+    
+    display: flex;
+   margin-left: 25%;
+    border: 2px solid white;
+    border-radius: 12px;
+
+}
+#score1{
+    font-size: 3rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    color: white;
+
+}
+#gameover{
+    position: absolute;
+    margin-left: 28%;
+    margin-top: 4.5%;
+    display: none;
+    
+}
+
+    
+
