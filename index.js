@@ -29,7 +29,7 @@ let bomby4;
 let score=0;
 let gameover1= new Audio('gameover1.mp3');
 let food= new Audio('eating.mp3');
-let bomb= new Audio('bomb.mp3');
+let bombso= new Audio('bomb.mp3');
 
 
 // let a=prompt("Enter Level 1-10 of the game",);
@@ -53,20 +53,30 @@ function update() {
     context.fillStyle="black";
     context.fillRect(0, 0, mainboard.width, mainboard.height);
 
-    context.fillStyle="red";
-    context.fillRect(bombx, bomby, blocks, blocks);
+    var bomb= document.getElementById("bomb1");
+    context.drawImage(bomb, bombx, bomby, 28, 28);
 
-    context.fillStyle="red";
-    context.fillRect(bombx2, bomby2, blocks, blocks);
+    var bomb= document.getElementById("bomb1");
+    context.drawImage(bomb, bombx2, bomby2, 28, 28);
 
-    context.fillStyle="red";
-    context.fillRect(bombx3, bomby3, blocks, blocks);
+    var bomb= document.getElementById("bomb1");
+    context.drawImage(bomb, bombx3, bomby3, 28, 28);
 
-    context.fillStyle="red";
-    context.fillRect(bombx4, bomby4, blocks, blocks);
+    var bomb= document.getElementById("bomb1");
+    context.drawImage(bomb, bombx4, bomby4, 28, 28);
     
-    context.fillStyle="orange";
-    context.fillRect(foodX, foodY, blocks, blocks);
+    
+    // context.fillStyle="red";
+    // context.fillRect(bombx2, bomby2, blocks, blocks);
+
+    // context.fillStyle="red";
+    // context.fillRect(bombx3, bomby3, blocks, blocks);
+
+    // context.fillStyle="red";
+    // context.fillRect(bombx4, bomby4, blocks, blocks);
+    
+    var food1= document.getElementById("food1");
+    context.drawImage(food1, foodX, foodY, 25, 25);
 
 
     if (sx == foodX && sy == foodY) {
@@ -75,6 +85,7 @@ function update() {
         setInterval(placeFood,10000);
         score++;
         food.play();
+
     }
    
     document.getElementById("score").innerHTML=score;
@@ -108,7 +119,7 @@ function update() {
      if (sx==bombx && sy==bomby || sx==bombx2 && sy==bomby2 || sx==bombx3 && sy==bomby3 || sx==bombx4 && sy==bomby4 ) {
         document.getElementById("gameover").style.display='flex';
         document.querySelector("body").style.background='red';
-        bomb.play();
+        bombso.play();
 
      }
 }
