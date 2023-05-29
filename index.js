@@ -14,6 +14,9 @@ var snakelen=[];
 let foodX;
 let foodY;
 
+let foodX2;
+let foodY2;
+
 let bombx;
 let bomby;
 
@@ -40,7 +43,7 @@ window.onload=function(){
   
   document.addEventListener("keyup",changeDirection);
   placeFood();
-  
+  placeFood2();
   setInterval(update, 1000/(12));
   setInterval(placebomb,1000);
   setInterval(placebomb2,2000);
@@ -78,11 +81,15 @@ function update() {
     var food1= document.getElementById("food1");
     context.drawImage(food1, foodX, foodY, 25, 25);
 
+    var food2= document.getElementById("food1");
+    context.drawImage(food2, foodX2, foodY2, 25, 25);
 
-    if (sx == foodX && sy == foodY) {
+    if ((sx == foodX && sy == foodY) || (sx==foodX2 && sy==foodY2)) {
         snakelen.push([foodX, foodY]);
         placeFood();
-        setInterval(placeFood,10000);
+        placeFood2();
+        setInterval(placeFood,20000);
+        setInterval(placeFood2,20000);
         score++;
         food.play();
 
@@ -146,6 +153,10 @@ function changeDirection(e) {
 function placeFood() {
     foodX = Math.floor(Math.random() * col) * blocks;
     foodY = Math.floor(Math.random() * row) * blocks;}
+
+    function placeFood2() {
+        foodX2 = Math.floor(Math.random() * col) * blocks;
+        foodY2 = Math.floor(Math.random() * row) * blocks;}
 
     function placebomb() {
         bombx = Math.floor(Math.random() * col) * blocks;
