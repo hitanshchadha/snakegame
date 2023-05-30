@@ -12,14 +12,18 @@ body{
     color: white;
 
 }
-#mainboard{
+#mainboarddiv{
     
     
     display: flex;
-   margin-left: 25%;
-    border: 2px solid white;
-    border-radius: 12px;
+   justify-content: center;
+   align-items: center;
+    
 
+}
+#mainboard{
+    
+    border-radius: 10px;
 }
 #score1{
     font-size: 2.8rem;
@@ -33,9 +37,11 @@ body{
 }
 #gameover{
     position: absolute;
-    margin-left: 28%;
-    margin-top: 4.5%;
+    margin-left: 24%;
+    margin-top: 0.6%;
     display: none;
+    height: 66%;
+    width: 51%;
     
 }
 

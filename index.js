@@ -34,6 +34,9 @@ let gameover1= new Audio('gameover1.mp3');
 let food= new Audio('eating.mp3');
 let bombso= new Audio('bomb.mp3');
 
+let s=15;
+let b=1000;
+
 
 // let a=prompt("Enter Level 1-10 of the game",);
 
@@ -44,7 +47,7 @@ window.onload=function(){
   document.addEventListener("keyup",changeDirection);
   placeFood();
   placeFood2();
-  setInterval(update, 1000/(12));
+  update();
   setInterval(placebomb,1000);
   setInterval(placebomb2,2000);
   setInterval(placebomb3,4000);
@@ -52,37 +55,28 @@ window.onload=function(){
  
 };
 function update() {
-
+    setTimeout(function(){ requestAnimationFrame(update);
     context.fillStyle="black";
     context.fillRect(0, 0, mainboard.width, mainboard.height);
 
     var bomb= document.getElementById("bomb1");
-    context.drawImage(bomb, bombx, bomby, 28, 28);
+    context.drawImage(bomb, bombx, bomby, blocks+2, blocks+2);
 
     var bomb= document.getElementById("bomb1");
-    context.drawImage(bomb, bombx2, bomby2, 28, 28);
+    context.drawImage(bomb, bombx2, bomby2,blocks+2, blocks+2);
 
     var bomb= document.getElementById("bomb1");
-    context.drawImage(bomb, bombx3, bomby3, 28, 28);
+    context.drawImage(bomb, bombx3, bomby3, blocks+2, blocks+2);
 
     var bomb= document.getElementById("bomb1");
-    context.drawImage(bomb, bombx4, bomby4, 28, 28);
+    context.drawImage(bomb, bombx4, bomby4, blocks+2, blocks+2);
     
-    
-    // context.fillStyle="red";
-    // context.fillRect(bombx2, bomby2, blocks, blocks);
-
-    // context.fillStyle="red";
-    // context.fillRect(bombx3, bomby3, blocks, blocks);
-
-    // context.fillStyle="red";
-    // context.fillRect(bombx4, bomby4, blocks, blocks);
     
     var food1= document.getElementById("food1");
-    context.drawImage(food1, foodX, foodY, 25, 25);
+    context.drawImage(food1, foodX, foodY, blocks, blocks);
 
     var food2= document.getElementById("food1");
-    context.drawImage(food2, foodX2, foodY2, 25, 25);
+    context.drawImage(food2, foodX2, foodY2, blocks, blocks);
 
     if ((sx == foodX && sy == foodY) || (sx==foodX2 && sy==foodY2)) {
         snakelen.push([foodX, foodY]);
@@ -92,6 +86,9 @@ function update() {
         setInterval(placeFood2,20000);
         score++;
         food.play();
+        s+=2;
+        
+        
 
     }
    
@@ -127,9 +124,10 @@ function update() {
         document.getElementById("gameover").style.display='flex';
         document.querySelector("body").style.background='red';
         bombso.play();
+        b=0;
 
      }
-}
+},b/s)}
 
 
 function changeDirection(e) {
