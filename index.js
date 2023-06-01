@@ -124,6 +124,7 @@ function update() {
         document.getElementById("gameover").style.display='flex';
         document.querySelector("body").style.background='red';
         gameover1.play();
+        setInterval(refreshPage,2500);
         
         
      }
@@ -132,6 +133,7 @@ function update() {
         document.querySelector("body").style.background='red';
         bombso.play();
         b=0;
+        setInterval(refreshPage,2500);
 
      }
 },b/s)}
@@ -202,4 +204,7 @@ function placeFood() {
                 velx = 1;
                 vely= 0;
             }
-        });        
+        });       
+        function refreshPage(){
+            window.location.reload();
+        }  
