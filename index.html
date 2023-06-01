@@ -6,14 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/998571c6b3.js" crossorigin="anonymous"></script>
     <title>Most Difficult Snake Game ever</title>
 </head>
 <div>
     <h1 class="snaketitle"> Snake Game</h1>
-    <img src="gameover.jpg" alt="" id="gameover">
+    <div class="gameoverdiv">    <img src="gameover.jpg" alt="" id="gameover"></div>
     <img src="bomb1.png" alt="" id="bomb1" style="display: none;" >
     <img src="food1.jpeg" alt="" id="food1" style="display: none;" >
 <div id="mainboarddiv"> <canvas id="mainboard"> </canvas></div>
+<div class="buttonc">
+<div class="button-container">
+    <div class="button arrow" id="btn-left"><i class="fas fa-arrow-left"></i></div>
+    <div class="updown-button">
+      <div class="button arrow" id="btn-up"><i class="fas fa-arrow-up"></i></div>
+      <div class="button arrow" id="btn-down"><i class="fas fa-arrow-down"></i></div>
+    </div>
+    <div class="button arrow" id="btn-right"><i class="fas fa-arrow-right"></i></div>
+    
+  </div></div>
     <h2 id="score1">Score:  &nbsp; <span id="score"></span></h2>
     
 </body>

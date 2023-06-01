@@ -1,6 +1,6 @@
-let blocks=25;
-let row=20;
-let col=30;
+let blocks=18;
+let row=25;
+let col=20;
 let mainboard = document.getElementById("mainboard");
 var context =mainboard.getContext("2d");
 
@@ -36,6 +36,12 @@ let bombso= new Audio('bomb.mp3');
 
 let s=15;
 let b=1000;
+var timer=0
+
+let left=document.getElementById("btn-left");
+let right=document.getElementById("btn-right");
+let up=document.getElementById("btn-up");
+let down=document.getElementById("btn-down");
 
 
 // let a=prompt("Enter Level 1-10 of the game",);
@@ -43,7 +49,6 @@ let b=1000;
 window.onload=function(){
   mainboard.height= row*blocks;
   mainboard.width= col*blocks;
-  
   document.addEventListener("keyup",changeDirection);
   placeFood();
   placeFood2();
@@ -55,7 +60,7 @@ window.onload=function(){
  
 };
 function update() {
-    setTimeout(function(){ requestAnimationFrame(update);
+   timer= setTimeout(function(){ requestAnimationFrame(update);
     context.fillStyle="black";
     context.fillRect(0, 0, mainboard.width, mainboard.height);
 
@@ -87,6 +92,8 @@ function update() {
         score++;
         food.play();
         s+=2;
+        clearInterval(timer);
+        timer=0;
         
         
 
@@ -170,3 +177,29 @@ function placeFood() {
     function placebomb4() {
         bombx4 = Math.floor(Math.random() * col) * blocks;
         bomby4 = Math.floor(Math.random() * row) * blocks;}
+
+
+        up.addEventListener("click", function(){
+            if (vely !== "1") {
+                velx=0;
+                vely = "-1";
+            }
+        });
+        down.addEventListener("click",function(){
+            if (vely !== "-1") {
+                velx = 0;
+                vely = 1;
+            }
+        });
+    left.addEventListener("click", function(){
+            if (velx!=1) {
+                velx = -1;
+                vely = 0; ;
+            }
+        });
+        right.addEventListener("click", function(){
+            if (velx!=-1) {
+                velx = 1;
+                vely= 0;
+            }
+        });        
