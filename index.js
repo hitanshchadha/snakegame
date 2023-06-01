@@ -45,7 +45,6 @@ let down=document.getElementById("btn-down");
 
 let restart= document.getElementById("restart");
 
-// let a=prompt("Enter Level 1-10 of the game",);
 
 window.onload=function(){
   mainboard.height= row*blocks;
@@ -113,8 +112,7 @@ function update() {
     sx += velx * blocks;
     sy += vely * blocks;
     context.fillRect(sx, sy, blocks, blocks);
-//   var image= document.getElementById("eagle");
-// context.drawImage(image, sx, sy, 25, 25);
+
      for (let i = 0; i < snakelen.length; i++) {
     context.fillRect(snakelen[i][0], snakelen[i][1], blocks, blocks);
 
@@ -123,7 +121,7 @@ function update() {
      }
      if (sx>=col*blocks || sx<0 || sy>=row*blocks || sy<0) {
         document.getElementById("gameover").style.display='flex';
-        document.querySelector("body").style.background='red';
+        document.querySelector("body").style.background='rgb(255, 0, 0)';
         gameover1.play();
         document.getElementById("restart").style.display='flex';
         restart.addEventListener("click",function(){
@@ -136,7 +134,7 @@ function update() {
      }
      if (sx==bombx && sy==bomby || sx==bombx2 && sy==bomby2 || sx==bombx3 && sy==bomby3 || sx==bombx4 && sy==bomby4 ) {
         document.getElementById("gameover").style.display='flex';
-        document.querySelector("body").style.background='red';
+        document.querySelector("body").style.background='rgb(255, 0, 0)';
         bombso.play();
         b=0;
         document.getElementById("restart").style.display='flex';

@@ -9,7 +9,7 @@ background: radial-gradient(circle, rgba(72,251,63,1) 38%, rgba(70,226,252,1) 72
     justify-content: center;
     align-items: center;
     align-content: center;
-    color: rgb(119, 17, 203);
+    color: black;
 
 }
 #mainboarddiv{
@@ -32,7 +32,7 @@ background: radial-gradient(circle, rgba(72,251,63,1) 38%, rgba(70,226,252,1) 72
     justify-content: center;
     align-items: center;
     align-content: center;
-    color: rgb(119, 17, 203);
+    color: black;
 
 }
 .gameoverdiv{
@@ -63,12 +63,14 @@ background: radial-gradient(circle, rgba(72,251,63,1) 38%, rgba(70,226,252,1) 72
     display: flex;
     justify-content: center;
     margin-top: 2%;
+    
 }
 .button-container {
     display: flex;
     justify-content: space-between;
-    width: 350px;
+    width: 300px;
     align-items: center;
+    
   }
 
   .button {
