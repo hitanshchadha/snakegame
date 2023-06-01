@@ -43,6 +43,7 @@ let right=document.getElementById("btn-right");
 let up=document.getElementById("btn-up");
 let down=document.getElementById("btn-down");
 
+let restart= document.getElementById("restart");
 
 // let a=prompt("Enter Level 1-10 of the game",);
 
@@ -124,7 +125,12 @@ function update() {
         document.getElementById("gameover").style.display='flex';
         document.querySelector("body").style.background='red';
         gameover1.play();
-        setInterval(refreshPage,2500);
+        document.getElementById("restart").style.display='flex';
+        restart.addEventListener("click",function(){
+         refreshPage();
+        });
+
+        
         
         
      }
@@ -133,7 +139,11 @@ function update() {
         document.querySelector("body").style.background='red';
         bombso.play();
         b=0;
-        setInterval(refreshPage,2500);
+        document.getElementById("restart").style.display='flex';
+        restart.addEventListener("click",function(){
+         refreshPage();
+        });
+        
 
      }
 },b/s)}
